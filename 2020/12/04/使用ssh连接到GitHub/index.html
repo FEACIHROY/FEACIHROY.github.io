@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://FEACIHROY.github.io">
-  <title>博客是怎样建立的 | feacihroy</title>
+  <title>使用ssh连接到GitHub | feacihroy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2020年11月19日，成功建好了自己的博客，花一点时间记录博客建立的过程。">
+  <meta name="description" content="var meting_api&#x3D;&#39;http:&#x2F;&#x2F;xxx&#x2F;api.php?server&#x3D;:server&amp;type&#x3D;:type&amp;id&#x3D;:id&amp;r&#x3D;:r&#39;第1步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客是怎样建立的">
-<meta property="og:url" content="https://feacihroy.github.io/2020/11/20/%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E7%9A%84/index.html">
+<meta property="og:title" content="使用ssh连接到GitHub">
+<meta property="og:url" content="https://feacihroy.github.io/2020/12/04/%E4%BD%BF%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/index.html">
 <meta property="og:site_name" content="feacihroy">
-<meta property="og:description" content="2020年11月19日，成功建好了自己的博客，花一点时间记录博客建立的过程。">
+<meta property="og:description" content="var meting_api&#x3D;&#39;http:&#x2F;&#x2F;xxx&#x2F;api.php?server&#x3D;:server&amp;type&#x3D;:type&amp;id&#x3D;:id&amp;r&#x3D;:r&#39;第1步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-20T01:06:01.000Z">
-<meta property="article:modified_time" content="2020-11-27T00:35:53.994Z">
+<meta property="article:published_time" content="2020-12-04T01:29:27.000Z">
+<meta property="article:modified_time" content="2020-12-04T01:46:54.134Z">
 <meta property="article:author" content="kkk">
 <meta name="twitter:card" content="summary">
   
@@ -144,14 +144,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-博客是怎样建立的" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-使用ssh连接到GitHub" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      博客是怎样建立的
+      使用ssh连接到GitHub
     </h1>
   
 
@@ -161,24 +161,19 @@
         <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
-<a href="/FEACIHROY.github.io/2020/11/20/%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E7%9A%84/" class="archive-article-date">
-  	<time datetime="2020-11-20T01:06:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-20</time>
+<a href="/FEACIHROY.github.io/2020/12/04/%E4%BD%BF%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/" class="archive-article-date">
+  	<time datetime="2020-12-04T01:29:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>2020年11月19日，成功建好了自己的博客，花一点时间记录博客建立的过程。</p>
-<a id="more"></a>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=530 height=86 src="//music.163.com/outchain/player?type=2&id=1394369908&auto=1&height=66"></iframe>
-
-<p>一、 Node.js(<a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a>)<br>从官网下载，安装。然后用cmd检验安装。<br>node -v<br>npm -v</p>
-<p>二、 安装博客框架<br>npm install -g hexo-cil<br>安装完成后可以用hexo -v 验证一下</p>
-<p>三、 建立空文件夹Blog<br>hexo init  #初始化博客<br>hexo s     #试运行博客，在本地查看：locatehost:4000;ctrl+c暂停；会自动生成一篇文章“hello world”<br>四、 自己的第一篇博文<br>hexo n “博文名称”<br>hexo clean<br>hexo g<br>hexo d<br>五、 部署到GitHub上<br>新建一个仓库，以自己的名字+github.io<br>然后回到Blog文件夹，安装部署git<br>npm install –save hexo-deployer-git<br>进入_config.yml  翻到最后</p>
-<p>epository后填仓库地址</p>
-<p>hexo d      #部署到远端<br>使用github.io访问博客</p>
-<p>更换主题<a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">https://github.com/litten/hexo-theme-yilia</a></p>
+        <p>第1步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：</p>
+<p>$ ssh-keygen -t rsa -C “<a href="mailto:&#121;&#111;&#x75;&#114;&#101;&#109;&#x61;&#x69;&#x6c;&#x40;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#121;&#111;&#x75;&#114;&#101;&#109;&#x61;&#x69;&#x6c;&#x40;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a>“</p>
+<p>第2步：登陆GitHub，打开“Account settings”，“SSH Keys”页面，然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</p>
+<p>点“Add Key”，你就应该看到已经添加的Key：</p>
+<p>第3步：在GitHub账户中添加公钥，登录你的github，头像处下拉框选择settings。<br>进入设置页后点击侧边栏的SSH and GPG keys按钮。<br>点击New SSH key,title可以任意填，并且将上一步骤生成的id_rsa.pub的内容复制到这里的key输入框中。</p>
 
       
 
@@ -258,7 +253,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://feacihroy.github.io/2020/11/20/%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E7%9A%84/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://feacihroy.github.io/2020/12/04/%E4%BD%BF%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,15 +267,11 @@
   
 <nav id="article-nav">
   
-    <a href="/FEACIHROY.github.io/2020/11/21/hexo%E8%BF%9B%E9%98%B6/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hexo进阶
-        
-      </div>
-    </a>
   
+    <a href="/FEACIHROY.github.io/2020/11/21/hexo%E8%BF%9B%E9%98%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo进阶</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
