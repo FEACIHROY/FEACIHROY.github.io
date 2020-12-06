@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://FEACIHROY.github.io">
-  <title>feacihroy</title>
+  <title>力扣每日一题 | feacihroy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="kkk">
-<meta property="og:type" content="website">
-<meta property="og:title" content="feacihroy">
-<meta property="og:url" content="https://feacihroy.github.io/index.html">
+  <meta name="description" content="力扣每日一题2020-12-6 原题：给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。在杨辉三角中，每个数是它左上方和右上方的数的和。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="力扣每日一题">
+<meta property="og:url" content="https://feacihroy.github.io/2020/12/06/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/index.html">
 <meta property="og:site_name" content="feacihroy">
-<meta property="og:description" content="kkk">
+<meta property="og:description" content="力扣每日一题2020-12-6 原题：给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。在杨辉三角中，每个数是它左上方和右上方的数的和。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif">
+<meta property="article:published_time" content="2020-12-06T12:09:02.000Z">
+<meta property="article:modified_time" content="2020-12-06T12:09:56.963Z">
 <meta property="article:author" content="kkk">
+<meta property="article:tag" content="力扣每日一题">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif">
   
     <link rel="alternative" href="/atom.xml" title="feacihroy" type="application/atom+xml">
   
@@ -142,21 +147,24 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-力扣每日一题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-力扣每日一题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/FEACIHROY.github.io/2020/12/06/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">力扣每日一题</a>
+    <h1 class="article-title" itemprop="name">
+      力扣每日一题
     </h1>
   
 
         
-        <a href="/FEACIHROY.github.io/2020/12/06/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+<a href="/FEACIHROY.github.io/2020/12/06/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" class="archive-article-date">
   	<time datetime="2020-12-06T12:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-06</time>
 </a>
         
@@ -164,12 +172,65 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="力扣每日一题"><a href="#力扣每日一题" class="headerlink" title="力扣每日一题"></a>力扣每日一题</h2><p>2020-12-6<br> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/pascals-triangle/">原题</a>：给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。<br><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" alt="此处输入图片的描述"><br>在杨辉三角中，每个数是它左上方和右上方的数的和。<br>
-        
-          <a class="article-more-a" href="/FEACIHROY.github.io/2020/12/06/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/#more">more >></a>
-        
+        <h2 id="力扣每日一题"><a href="#力扣每日一题" class="headerlink" title="力扣每日一题"></a>力扣每日一题</h2><p>2020-12-6<br> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/pascals-triangle/">原题</a>：给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。<br><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" alt="此处输入图片的描述"><br>在杨辉三角中，每个数是它左上方和右上方的数的和。<br> <a id="more"></a><br> 解答：</p>
+<pre><code> class Solution:
+def generate(self, numRows: int) -&gt; List[List[int]]:
+    if numRows == 0: return []
+    res = [[1]]
+    while len(res) &lt; numRows:
+        newRow = [a+b for a, b in zip([0]+res[-1], res[-1]+[0])]
+        res.append(newRow)      
+    return res</code></pre>
+<p>zip函数使用方法</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>a = [1,2,3]<br>b = [4,5,6]<br>c = [4,5,6,7,8]<br>zipped = zip(a,b)     # 打包为元组的列表<br>[(1, 4), (2, 5), (3, 6)]<br>zip(a,c)              # 元素个数与最短的列表一致<br>[(1, 4), (2, 5), (3, 6)]<br>zip(<em>zipped)          # 与 zip相反，</em>zipped可理解为解压，返回二维矩阵式<br>[(1, 2, 3), (4, 5, 6)]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>class Solution:
+def generate(self, numRows: int) -&gt; List[List[int]]:
+    if numRows==0:
+        return []
+    elif numRows==1:
+        return [[1]]
+    elif numRows==2:
+        return [[1],[1,1]]
+    else:
+        a=[[1],[1,1]]
+        for i in range(2,numRows):
+            c=[]
+            c.append(1)
+            for j in range(1,i):
+                c.append(a[i-1][j-1]+a[i-1][j])
+            c.append(1)
+            a.append(c)
+        return a</code></pre>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -189,16 +250,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/FEACIHROY.github.io/2020/12/06/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://feacihroy.github.io/2020/12/06/%E5%8A%9B%E6%89%A3%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/FEACIHROY.github.io/2020/12/04/%E4%BD%BF%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用ssh连接到GitHub</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -218,206 +338,14 @@
 
 
 
-
   
-    <article id="post-使用ssh连接到GitHub" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/FEACIHROY.github.io/2020/12/04/%E4%BD%BF%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/">使用ssh连接到GitHub</a>
-    </h1>
   
 
-        
-        <a href="/FEACIHROY.github.io/2020/12/04/%E4%BD%BF%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/" class="archive-article-date">
-  	<time datetime="2020-12-04T01:29:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-<p>第1步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：</p>
-<p>$ ssh-keygen -t rsa -C “<a href="mailto:&#x79;&#x6f;&#117;&#x72;&#x65;&#109;&#97;&#x69;&#x6c;&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#x6f;&#117;&#x72;&#x65;&#109;&#97;&#x69;&#x6c;&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;</a>“</p>
-<p>第2步：登陆GitHub，打开“Account settings”，“SSH Keys”页面，然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</p>
-<p>点“Add Key”，你就应该看到已经添加的Key：</p>
-<p>第3步：在GitHub账户中添加公钥，登录你的github，头像处下拉框选择settings。<br>进入设置页后点击侧边栏的SSH and GPG keys按钮。<br>点击New SSH key,title可以任意填，并且将上一步骤生成的id_rsa.pub的内容复制到这里的key输入框中。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/FEACIHROY.github.io/2020/12/04/%E4%BD%BF%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo进阶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/FEACIHROY.github.io/2020/12/02/hexo%E8%BF%9B%E9%98%B6/">hexo进阶</a>
-    </h1>
   
 
-        
-        <a href="/FEACIHROY.github.io/2020/12/02/hexo%E8%BF%9B%E9%98%B6/" class="archive-article-date">
-  	<time datetime="2020-12-02T13:45:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个只有文字的博客显得有些单调，插入音乐，图片可以使博客更加精彩</p>
-        
-          <a class="article-more-a" href="/FEACIHROY.github.io/2020/12/02/hexo%E8%BF%9B%E9%98%B6/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/FEACIHROY.github.io/2020/12/02/hexo%E8%BF%9B%E9%98%B6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客是怎样建立的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/FEACIHROY.github.io/2020/12/01/%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E7%9A%84/">博客是怎样建立的</a>
-    </h1>
   
 
-        
-        <a href="/FEACIHROY.github.io/2020/12/01/%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E7%9A%84/" class="archive-article-date">
-  	<time datetime="2020-12-01T01:06:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2020年11月19日，成功建好了自己的博客，花一点时间记录博客建立的过程。</p>
-        
-          <a class="article-more-a" href="/FEACIHROY.github.io/2020/12/01/%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E7%9A%84/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/FEACIHROY.github.io/2020/12/01/%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E6%A0%B7%E5%BB%BA%E7%AB%8B%E7%9A%84/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -452,8 +380,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
